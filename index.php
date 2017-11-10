@@ -31,5 +31,9 @@ $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From: <wahyusantoso1997@gmail.com>' . "\r\n";
 //$headers .= 'Cc: @.com' . "\r\n";
 
-mail($to,$subject,$message,$headers);
+$success = mail($to,$subject,$message,$headers);
+
+if($success){
+echo "success";
+}
 ?> 
