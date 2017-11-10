@@ -35,5 +35,7 @@ $success = mail($to,$subject,$message,$headers);
 
 if($success){
 echo "success";
+}else{
+    echo "fail";
 }
 ?> 
