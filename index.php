@@ -53,7 +53,7 @@ $mail->addAddress($to, 'Peserta');
  //Content
  $mail->isHTML(true);                                  // Set email format to HTML
  $mail->Subject = $subject;
- $mail->Body    = "<div>".$body."</div>";
+ $mail->Body    = "<div style='background:orange;text-align:center;margin-bottom:10px;padding:5px' > <h1>MAGE 2018</h1> </div> <div>".$body."</div>";
 
  
 //send the message, check for errors
