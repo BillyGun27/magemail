@@ -53,7 +53,7 @@ $mail->addAddress($to, 'Peserta');
  //Content
  $mail->isHTML(true);                                  // Set email format to HTML
  $mail->Subject = $subject;
- $mail->Body    = $body;
+ $mail->Body    = "<img src='http://mage.telematics.its.ac.id/resources/images/mage.svg'><div>".$body."</div>";
  
 //send the message, check for errors
 if (!$mail->send()) {
