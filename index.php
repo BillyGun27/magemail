@@ -6,6 +6,10 @@ require 'Exception.php';
 require 'PHPMailer.php';
 require 'SMTP.php';
 
+$mailtype = $_POST["mailtype"];
+$subject = $_POST["subject"];
+$body= $_POST["body"];
+$to = $_POST["to"];
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
@@ -40,18 +44,17 @@ $mail->Username = "mage.autosend@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "mageCE0721";
 
-$mail->setFrom('mage.ce.its@gmail.com', 'Mage-no-reply');
+$mail->setFrom('mage.ce.its@gmail.com', $mailtype);
 //Set an alternative reply-to address
 $mail->addReplyTo('mage.ce.its@gmail.com', 'Mage Admin');
 //Set who the message is to be sent to
-$mail->addAddress('billygun27@gmail.com', 'Peserta');
+$mail->addAddress($to, 'Peserta');
 
  //Content
  $mail->isHTML(true);                                  // Set email format to HTML
- $mail->Subject = 'Here is the subject';
- $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
- $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
+ $mail->Subject = $subject;
+ $mail->Body    = $body;
+ 
 //send the message, check for errors
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
