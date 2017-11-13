@@ -53,8 +53,11 @@ $mail->addAddress($to, 'Peserta');
  //Content
  $mail->isHTML(true);                                  // Set email format to HTML
  $mail->Subject = $subject;
- $mail->Body    = "<div style='background:orange;text-align:center;margin-bottom:10px;padding:5px' > <h1>MAGE 2018</h1> </div> <div>".$body."</div>";
-
+ $mail->Body    = "<div>".$body."</div>".
+ "<div><h4 style='color:gray;'>Multimedia and Game Event 2018</h4>
+ <h4 style='color:orange;'>\"Exploring Digital Technology for Indonesian Society\"</h4>
+ Departemen Teknik Komputer, Fakultas Teknologi Elektro<br>
+ Institut Teknologi Sepuluh Nopember, Surabaya</div>";
  
 //send the message, check for errors
 if (!$mail->send()) {
