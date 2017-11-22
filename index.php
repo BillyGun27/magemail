@@ -50,14 +50,29 @@ $mail->addReplyTo('mage.ce.its@gmail.com', 'Mage Admin');
 //Set who the message is to be sent to
 $mail->addAddress($to, 'Peserta');
 
+$mail->AddEmbeddedImage('img/www.png',1000,'www.png');
+$mail->AddEmbeddedImage('img/fb.png',1001,'fb.png.jpg');
+$mail->AddEmbeddedImage('img/inst.png',1002,'inst.png');
+$mail->AddEmbeddedImage('img/line.png',1003,'line.png');
+$mail->AddEmbeddedImage('img/twit.png',1004,'twit.png');
+$mail->AddEmbeddedImage('img/ytube.png',1005,'ytube.png');
+
+
  //Content
  $mail->isHTML(true);                                  // Set email format to HTML
  $mail->Subject = $subject;
  $mail->Body    = "<div>".$body."</div>".
- "<div><h4 style='color:gray;'>Multimedia and Game Event 2018</h4>
+ "<br><div>Regards,<br>Panitia MAGE 2018<br>".
+ "--<h4 style='color:gray;'>Multimedia and Game Event 2018</h4>
  <h4 style='color:orange;'>\"Exploring Digital Technology for Indonesian Society\"</h4>
  Departemen Teknik Komputer, Fakultas Teknologi Elektro<br>
- Institut Teknologi Sepuluh Nopember, Surabaya</div>";
+ Institut Teknologi Sepuluh Nopember, Surabaya</div><br>".
+ "<a href=\"mage.telematics.its.ac.id/\"><img src='cid:1000' alt='www'></a> ".
+ "<a href=\"www.facebook.com/mageits\"><img src='cid:1001' alt='FB'></a> ".
+ "<a href=\"www.instagram.com/mage_its/\"><img src='cid:1002' alt='Instagram'></a> ".
+ "<a href=\"line.me/R/ti/p/%40rio5948f\"><img src='cid:1003' alt='Line'></a> ".
+ "<a href=\"twitter.com/mage_its\"><img src='cid:1004' alt='Twitter'></a> ".
+ "<a href=\"www.youtube.com/channel/UCO1SuldERZu0jgBBDzzOkoQ\"><img src='cid:1005' alt='Youtube'></a> ";
  
 //send the message, check for errors
 if (!$mail->send()) {
